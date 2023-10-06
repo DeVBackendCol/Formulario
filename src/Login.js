@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 
 const Login = () => {
+  //definicion de variables de estado y las funciones que setean el estado
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  //valor creado despues de definir la funcion del manejador de autenticacion
   const [authenticated, setAuthenticated] = useState(false);
-
+  //se define el controlador del evento autenticacion
   const handleAuthentication = () => {
-    // En un escenario real, deberías consultar una base de datos y verificar las credenciales aquí.
-    // Por simplicidad, utilizaremos valores estáticos para usuario y contraseña.
     const validUsername = 'anndersson';
     const validPassword = '1234';
-
+    // uso del operador de estricta igualdad para determinar el resultado booleano
     if (username === validUsername && password === validPassword) {
       setAuthenticated(true);
     } else {
@@ -22,7 +22,7 @@ const Login = () => {
     <div className='login'>
       <h2>INGRESO AL SISTEMA</h2>
       {authenticated ? (
-        <p>Autenticación satisfactoria. ¡Bienvenido!</p>
+        <p>Autenticación satisfactoria.</p>
       ) : (
         <form>
           <div>
